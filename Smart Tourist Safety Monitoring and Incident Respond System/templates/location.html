@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Location</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/location.css') }}">
+</head>
+<body>
+
+<header>
+    <h2>🌍 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/report">Report</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1>📍 Live Location</h1>
+
+    <p>Your current location is shown below.</p>
+
+    <div class="location-box">
+
+        <h3>Latitude</h3>
+        <p id="lat">Loading...</p>
+
+        <h3>Longitude</h3>
+        <p id="lon">Loading...</p>
+
+        <button onclick="getLocation()">
+            Refresh Location
+        </button>
+
+        <br><br>
+
+        <a id="mapLink" href="#" target="_blank">
+            <button>
+                Open in Google Maps
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Tourist Safety System</p>
+</footer>
+
+<script>
+
+function getLocation(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(showPosition,showError);
+
+    }
+    else{
+
+        alert("Geolocation is not supported.");
+
+    }
+
+}
+
+function showPosition(position){
+
+    let lat=position.coords.latitude;
+    let lon=position.coords.longitude;
+
+    document.getElementById("lat").innerHTML=lat;
+    document.getElementById("lon").innerHTML=lon;
+
+    document.getElementById("mapLink").href=
+    "https://www.google.com/maps?q="+lat+","+lon;
+
+}
+
+function showError(error){
+
+    switch(error.code){
+
+        case error.PERMISSION_DENIED:
+            alert("Location permission denied.");
+            break;
+
+        case error.POSITION_UNAVAILABLE:
+            alert("Location unavailable.");
+            break;
+
+        case error.TIMEOUT:
+            alert("Location request timed out.");
+            break;
+
+        default:
+            alert("Unknown error.");
+    }
+
+}
+
+window.onload=getLocation;
+
+</script>
+<script src="{{ url_for('static', filename='js/location.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>

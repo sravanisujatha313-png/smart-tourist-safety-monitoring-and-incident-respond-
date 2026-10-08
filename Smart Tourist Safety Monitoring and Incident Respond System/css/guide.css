@@ -1,0 +1,307 @@
+/* guide.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* Header */
+
+header{
+    background:#0b5ed7;
+    color:white;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+header h2{
+    font-size:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd54f;
+}
+
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(135deg,#2196f3,#4caf50);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+
+/* Container */
+
+.container{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+
+/* Guide Cards */
+
+.guide-card{
+
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+
+}
+
+
+.guide-card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+.guide-card i{
+
+    font-size:50px;
+    color:#0b5ed7;
+    margin-bottom:15px;
+
+}
+
+
+.guide-card h3{
+
+    color:#0b5ed7;
+    margin-bottom:15px;
+
+}
+
+
+.guide-card p{
+
+    color:#666;
+    line-height:1.5;
+    margin-bottom:20px;
+
+}
+
+
+/* Button */
+
+button{
+
+    background:#0b5ed7;
+    color:white;
+    border:none;
+    padding:10px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    background:#198754;
+
+}
+
+
+/* Result Box */
+
+.result-box{
+
+    width:80%;
+    margin:20px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+
+.result-box h3{
+
+    color:#0b5ed7;
+    margin-bottom:15px;
+
+}
+
+
+.result-box ul{
+
+    text-align:left;
+    padding-left:30px;
+
+}
+
+
+.result-box li{
+
+    margin:10px 0;
+    font-size:16px;
+
+}
+
+
+/* Footer */
+
+footer{
+
+    margin-top:40px;
+    background:#0b5ed7;
+    color:white;
+    text-align:center;
+    padding:18px;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    header{
+
+        flex-direction:column;
+        text-align:center;
+
+    }
+
+
+    nav{
+
+        margin-top:15px;
+
+    }
+
+
+    nav a{
+
+        display:block;
+        margin:10px 0;
+
+    }
+
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+
+    .container{
+
+        width:95%;
+
+    }
+
+
+    .result-box{
+
+        width:95%;
+
+    }
+
+}
+
+
+/* Dark Mode */
+
+.dark-mode{
+
+    background:#121212;
+    color:white;
+
+}
+
+
+.dark-mode header,
+.dark-mode footer{
+
+    background:#1e1e1e;
+
+}
+
+
+.dark-mode .guide-card,
+.dark-mode .result-box{
+
+    background:#2b2b2b;
+    color:white;
+
+}
+
+
+.dark-mode .guide-card h3,
+.dark-mode .result-box h3{
+
+    color:#ffd54f;
+
+}
+
+
+.dark-mode .guide-card p,
+.dark-mode .result-box li{
+
+    color:white;
+
+}
+
+
+.dark-mode button{
+
+    background:#1565c0;
+
+}
+
+
+.dark-mode nav a{
+
+    color:white;
+
+}
+
+
+.dark-mode nav a:hover{
+
+    color:#ffd54f;
+
+}

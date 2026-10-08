@@ -1,0 +1,151 @@
+/* register.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#2196f3,#4caf50);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* Register Container */
+
+.container{
+    width:420px;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.container h2{
+    text-align:center;
+    color:#0b5ed7;
+    margin-bottom:25px;
+}
+
+/* Form */
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin:10px 0 6px;
+    font-weight:bold;
+    color:#333;
+}
+
+input{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:#0b5ed7;
+    box-shadow:0 0 6px rgba(11,94,215,.3);
+}
+
+/* Register Button */
+
+button{
+    margin-top:25px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#0b5ed7;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#198754;
+}
+
+/* Login Link */
+
+p{
+    margin-top:20px;
+    text-align:center;
+    color:#555;
+}
+
+p a{
+    color:#0b5ed7;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+p a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .container{
+        width:90%;
+        padding:25px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+}
+
+/* ===================== */
+/* Dark Mode */
+/* ===================== */
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode .container{
+    background:#2b2b2b;
+    color:white;
+}
+
+.dark-mode h2,
+.dark-mode label{
+    color:white;
+}
+
+.dark-mode input{
+    background:#333;
+    color:white;
+    border:1px solid #666;
+}
+
+.dark-mode input::placeholder{
+    color:#bbb;
+}
+
+.dark-mode button{
+    background:#1565c0;
+}
+
+.dark-mode p{
+    color:white;
+}
+
+.dark-mode a{
+    color:#ffd54f;
+}

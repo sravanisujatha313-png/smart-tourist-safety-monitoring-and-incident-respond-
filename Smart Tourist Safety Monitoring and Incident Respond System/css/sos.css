@@ -1,0 +1,225 @@
+/* sos.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* Header */
+
+header{
+    background:#d32f2f;
+    color:white;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+header h2{
+    font-size:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffeb3b;
+}
+
+/* Container */
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:80vh;
+    padding:20px;
+}
+
+/* SOS Card */
+
+.sos-card{
+    background:white;
+    width:500px;
+    max-width:100%;
+    text-align:center;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* SOS Icon */
+
+.sos-icon{
+    font-size:70px;
+    color:#d32f2f;
+    margin-bottom:20px;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.sos-card h1{
+    color:#d32f2f;
+    margin-bottom:15px;
+}
+
+.sos-card p{
+    color:#555;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+/* SOS Button */
+
+#sosBtn{
+    background:#d32f2f;
+    color:white;
+    border:none;
+    padding:18px 40px;
+    font-size:22px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#sosBtn:hover{
+    background:#b71c1c;
+    transform:scale(1.05);
+}
+
+/* Status */
+
+#status{
+    margin-top:30px;
+    font-size:18px;
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+/* Footer */
+
+footer{
+    background:#d32f2f;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+
+    .sos-card{
+        width:95%;
+        padding:25px;
+    }
+
+    .sos-icon{
+        font-size:55px;
+    }
+
+    .sos-card h1{
+        font-size:28px;
+    }
+
+    #sosBtn{
+        width:100%;
+        font-size:18px;
+        padding:15px;
+    }
+
+}
+
+/* Dark Mode */
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode header,
+.dark-mode footer{
+    background:#1e1e1e;
+}
+
+.dark-mode .card,
+.dark-mode .container,
+.dark-mode table,
+.dark-mode .profile-card{
+    background:#2b2b2b;
+    color:white;
+}
+
+.dark-mode table th{
+    background:#333;
+}
+
+.dark-mode table td{
+    color:white;
+    border-color:#555;
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select{
+    background:#333;
+    color:white;
+    border:1px solid #666;
+}
+
+.dark-mode button{
+    background:#1565c0;
+    color:white;
+}
+
+.dark-mode nav a{
+    color:white;
+}
+
+.dark-mode nav a:hover{
+    color:#ffd54f;
+}

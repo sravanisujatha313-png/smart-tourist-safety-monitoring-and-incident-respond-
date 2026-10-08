@@ -1,0 +1,188 @@
+/* safety.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* Header */
+
+header{
+    background:#0b5ed7;
+    color:white;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+header h2{
+    font-size:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd54f;
+}
+
+/* Main Container */
+
+.container{
+    width:90%;
+    margin:40px auto;
+}
+
+/* Title */
+
+.container h1{
+    text-align:center;
+    color:#0b5ed7;
+    margin-bottom:10px;
+}
+
+.container p{
+    text-align:center;
+    color:#666;
+    margin-bottom:35px;
+}
+
+/* Safety Cards */
+
+.safety-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.safety-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.safety-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.safety-card i{
+    font-size:50px;
+    color:#0b5ed7;
+    margin-bottom:15px;
+}
+
+.safety-card h3{
+    color:#0b5ed7;
+    margin-bottom:10px;
+}
+
+.safety-card p{
+    color:#555;
+    line-height:1.6;
+}
+
+/* Footer */
+
+footer{
+    background:#0b5ed7;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:40px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+
+    .container{
+        width:95%;
+    }
+
+    .safety-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* Dark Mode */
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode header,
+.dark-mode footer{
+    background:#1e1e1e;
+}
+
+.dark-mode .card,
+.dark-mode .container,
+.dark-mode table,
+.dark-mode .profile-card{
+    background:#2b2b2b;
+    color:white;
+}
+
+.dark-mode table th{
+    background:#333;
+}
+
+.dark-mode table td{
+    color:white;
+    border-color:#555;
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select{
+    background:#333;
+    color:white;
+    border:1px solid #666;
+}
+
+.dark-mode button{
+    background:#1565c0;
+    color:white;
+}
+
+.dark-mode nav a{
+    color:white;
+}
+
+.dark-mode nav a:hover{
+    color:#ffd54f;
+}

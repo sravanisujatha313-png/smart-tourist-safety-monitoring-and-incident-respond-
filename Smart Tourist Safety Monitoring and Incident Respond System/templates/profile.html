@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+
+<header>
+    <h2>🌍 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/report">Report</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="profile-card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+             alt="Profile Picture"
+             class="profile-img">
+
+        <h2>{{ user[1] }}</h2>
+        <p>Tourist User</p>
+
+        <hr><br>
+
+        <table>
+
+            <tr>
+                <td><strong>Tourist ID</strong></td>
+                <td>{{ user[0] }}</td>
+            </tr>
+
+            <tr>
+                <td><strong>Name</strong></td>
+                <td>{{ user[1] }}</td>
+            </tr>
+
+            <tr>
+                <td><strong>Email</strong></td>
+                <td>{{ user[2] }}</td>
+            </tr>
+
+            <tr>
+                <td><strong>Phone</strong></td>
+                <td>{{ user[3] }}</td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <h3>Your QR Code</h3>
+
+        <img src="{{ url_for('static', filename='qr_codes/' + user[4]) }}"
+             alt="Tourist QR Code"
+             width="220"
+             style="border:3px solid #0b5ed7; border-radius:10px; padding:10px; background:white;">
+
+        <br><br>
+
+        <a href="{{ url_for('static', filename='qr_codes/' + user[4]) }}" download>
+            <button>⬇ Download QR Code</button>
+        </a>
+
+        <br><br>
+
+        <a href="/dashboard">
+            <button>⬅ Back to Dashboard</button>
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Tourist Safety System</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+
+    <h2>🛡 Tourist Safety System - Admin Panel</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <h1>Administrator Dashboard</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h2>{{ total_users }}</h2>
+            <p>Total Users</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-exclamation-circle"></i>
+            <h2>{{ total_reports }}</h2>
+            <p>Total Reports</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-hourglass-half"></i>
+            <h2>{{ pending_reports }}</h2>
+            <p>Pending Reports</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-check-circle"></i>
+            <h2>{{ resolved_reports }}</h2>
+            <p>Resolved Reports</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <h2>Recent Incident Reports</h2>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Location</th>
+            <th>Incident</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+
+        {% for report in reports %}
+
+        <tr>
+            <td>{{ report[0] }}</td>
+            <td>{{ report[1] }}</td>
+            <td>{{ report[2] }}</td>
+            <td>{{ report[3] }}</td>
+            <td>{{ report[4] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/dashboard">
+        <button>⬅ Back to Dashboard</button>
+    </a>
+
+</div>
+
+<footer>
+
+    <p>© 2026 Tourist Safety System | Admin Panel</p>
+
+</footer>
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>

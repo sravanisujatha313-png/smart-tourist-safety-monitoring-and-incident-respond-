@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Incident</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h2>🌍 Tourist Safety System</h2>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1>🚨 Report an Incident</h1>
+    <p>Please provide the details below.</p>
+
+    <form action="/report" method="POST" enctype="multipart/form-data">
+
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <label>Current Location</label>
+        <input type="text" name="location" placeholder="Enter location" required>
+
+        <label>Incident Type</label>
+        <select name="incident_type" required>
+            <option value="">Select Incident</option>
+            <option>Theft</option>
+            <option>Accident</option>
+            <option>Harassment</option>
+            <option>Medical Emergency</option>
+            <option>Lost Passport</option>
+            <option>Lost Luggage</option>
+            <option>Natural Disaster</option>
+            <option>Other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea
+            name="description"
+            rows="5"
+            placeholder="Describe the incident..."
+            required></textarea>
+
+        <label>Upload Photo (Optional)</label>
+        <input type="file" name="photo" accept="image/*">
+
+        <button type="submit">Submit Report</button>
+
+    </form>
+
+</div>
+
+<footer>
+    <p>© 2026 Tourist Safety System</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/report.js') }}"></script>
+html<br><script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>

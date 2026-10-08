@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Emergency</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sos.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header>
+
+    <h2>🌍 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/location">Location</a>
+        <a href="/report">Report</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <div class="sos-card">
+
+        <i class="fas fa-exclamation-triangle sos-icon"></i>
+
+        <h1>Emergency SOS</h1>
+
+        <p>
+            Press the button below to send an emergency SOS alert.
+            Your current location will be used to help emergency responders.
+        </p>
+
+        <button id="sosBtn" onclick="sendSOS()">
+            🚨 SEND SOS
+        </button>
+
+        <div id="status"></div>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>© 2026 Tourist Safety System | Stay Safe • Travel Smart</p>
+
+</footer>
+
+<script>
+
+function sendSOS(){
+
+    const status = document.getElementById("status");
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+
+            status.innerHTML =
+            "<br><b>✅ SOS Alert Sent Successfully!</b><br><br>" +
+            "Latitude : " + lat + "<br>" +
+            "Longitude : " + lon;
+
+            alert("Emergency SOS Alert Sent!");
+
+        },function(){
+
+            alert("Unable to fetch your location.");
+
+        });
+
+    }
+
+    else{
+
+        alert("Geolocation is not supported by your browser.");
+
+    }
+
+}
+
+</script>
+
+<script src="{{ url_for('static', filename='js/sos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>

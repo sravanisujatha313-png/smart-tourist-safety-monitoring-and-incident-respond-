@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Smart Tourist Safety</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h2>Create Account</h2>
+
+        <p>Register to access Smart Tourist Safety System</p>
+
+        <form action="/register" method="POST">
+
+            <div class="input-box">
+
+                <i class="fa fa-user"></i>
+
+                <input
+                type="text"
+                name="username"
+                placeholder="Full Name"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-envelope"></i>
+
+                <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-phone"></i>
+
+                <input
+                type="tel"
+                name="phone"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                placeholder="Phone Number"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-lock"></i>
+
+                <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                minlength="8"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa fa-lock"></i>
+
+                <input
+                type="password"
+                name="confirm_password"
+                placeholder="Confirm Password"
+                minlength="8"
+                required>
+                
+            </div>
+
+            <button type="submit" class="btn">
+
+                Register
+
+            </button>
+
+        </form>
+
+        <div class="bottom">
+
+            Already have an account?
+
+            <a href="/login">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+html<br><script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>

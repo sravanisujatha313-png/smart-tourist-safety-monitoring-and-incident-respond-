@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nearby Hospitals</title>
+</head>
+
+<body>
+
+<h1>🏥 Tourist Safety System</h1>
+
+<a href="/dashboard">Dashboard</a> |
+<a href="/location">Location</a> |
+<a href="/report">Report</a> |
+<a href="/logout">Logout</a>
+
+<hr>
+
+<h2>🏥 Nearby Hospitals</h2>
+
+<p>Find hospitals near your current location.</p>
+
+<h3>Your Current Location</h3>
+
+<p>
+    <b>Latitude:</b>
+    <span id="lat">Getting location...</span>
+</p>
+
+<p>
+    <b>Longitude:</b>
+    <span id="lon">Getting location...</span>
+</p>
+
+<button onclick="getLocation()">📍 Get Current Location</button>
+
+<button onclick="openHospitals()">
+    🏥 Open Hospitals in Google Maps
+</button>
+
+<div id="message"></div>
+
+<p>© 2026 Tourist Safety System</p>
+
+
+<script>
+
+let latitude = null;
+let longitude = null;
+
+
+/* GET CURRENT LOCATION */
+
+function getLocation() {
+
+    if (!navigator.geolocation) {
+
+        document.getElementById("message").innerHTML =
+            "❌ Geolocation is not supported by this browser.";
+
+        return;
+    }
+
+    document.getElementById("lat").innerHTML = "Getting...";
+    document.getElementById("lon").innerHTML = "Getting...";
+
+    navigator.geolocation.getCurrentPosition(
+        showPosition,
+        showError,
+        {
+            enableHighAccuracy: true,
+            timeout: 15000,
+            maximumAge: 0
+        }
+    );
+}
+
+
+/* SHOW LOCATION */
+
+function showPosition(position) {
+
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+
+    document.getElementById("lat").innerHTML =
+        latitude.toFixed(6);
+
+    document.getElementById("lon").innerHTML =
+        longitude.toFixed(6);
+
+    document.getElementById("message").innerHTML =
+        "✅ Current location detected successfully.";
+
+}
+
+
+/* LOCATION ERROR */
+
+function showError(error) {
+
+    document.getElementById("lat").innerHTML = "Not available";
+    document.getElementById("lon").innerHTML = "Not available";
+
+    if (error.code === 1) {
+
+        document.getElementById("message").innerHTML =
+            "❌ Location permission denied. Please allow location access.";
+
+    }
+
+    else if (error.code === 2) {
+
+        document.getElementById("message").innerHTML =
+            "❌ Location unavailable. Please check your internet/Wi-Fi.";
+
+    }
+
+    else if (error.code === 3) {
+
+        document.getElementById("message").innerHTML =
+            "❌ Location request timed out. Try again.";
+
+    }
+
+    else {
+
+        document.getElementById("message").innerHTML =
+            "❌ Unable to get your location.";
+
+    }
+}
+
+
+/* OPEN GOOGLE MAPS */
+
+function openHospitals() {
+
+    if (latitude === null || longitude === null) {
+
+        alert("Please click 'Get Current Location' first.");
+
+        return;
+    }
+
+    const mapURL =
+        "https://www.google.com/maps/search/hospitals/@" +
+        latitude + "," +
+        longitude + ",15z";
+
+    window.open(mapURL, "_blank");
+}
+
+
+/* AUTOMATICALLY GET LOCATION WHEN PAGE OPENS */
+
+window.onload = function() {
+
+    getLocation();
+
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+</head>
+<body>
+
+<header>
+    <h2>🌍 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/report">Report</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1>📋 Incident History</h1>
+    <p>View all the incidents you have reported.</p>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Location</th>
+            <th>Incident</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+
+        {% for incident in incidents %}
+
+        <tr>
+            <td>{{ incident[0] }}</td>
+            <td>{{ incident[1] }}</td>
+            <td>{{ incident[2] }}</td>
+            <td>{{ incident[3] }}</td>
+            <td>{{ incident[4] }}</td>
+            <td>{{ incident[5] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+<footer>
+    <p>© 2026 Tourist Safety System</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/history.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+
+</body>
+</html>

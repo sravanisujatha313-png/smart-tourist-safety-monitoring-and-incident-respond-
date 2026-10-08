@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Guide | Tourist Safety System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/guide.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h2>🌍 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/location">Location</a>
+        <a href="/weather">Weather</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>🗺️ Travel Guide</h1>
+
+    <p>Explore tourist places safely with useful travel information.</p>
+
+</section>
+
+
+<div class="container">
+
+
+    <div class="guide-card">
+
+        <i class="fas fa-map-marker-alt"></i>
+
+        <h3>Popular Tourist Places</h3>
+
+        <p>
+            Discover famous locations, historical places,
+            beaches, temples and attractions.
+        </p>
+
+        <button onclick="showPlaces()">
+            View Places
+        </button>
+
+    </div>
+
+
+
+    <div class="guide-card">
+
+        <i class="fas fa-shield-alt"></i>
+
+        <h3>Safety Tips</h3>
+
+        <p>
+            Follow safety guidelines while travelling.
+            Keep emergency contacts and stay alert.
+        </p>
+
+        <button onclick="showSafety()">
+            Safety Tips
+        </button>
+
+    </div>
+
+
+
+    <div class="guide-card">
+
+        <i class="fas fa-suitcase"></i>
+
+        <h3>Travel Essentials</h3>
+
+        <p>
+            Carry ID proof, medicines, charger,
+            emergency numbers and required documents.
+        </p>
+
+        <button onclick="showEssentials()">
+            View Items
+        </button>
+
+    </div>
+
+
+
+    <div class="guide-card">
+
+        <i class="fas fa-phone"></i>
+
+        <h3>Emergency Support</h3>
+
+        <p>
+            Get quick access to police, ambulance
+            and emergency contacts.
+        </p>
+
+        <a href="/contacts">
+            <button>
+                Contact Now
+            </button>
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div id="guideResult" class="result-box">
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 Tourist Safety System | Stay Safe • Travel Smart
+    </p>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='js/guide.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+
+</body>
+
+</html>
+

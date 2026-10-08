@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts | Tourist Safety System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h2>🌍 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1>📞 Emergency Contacts</h1>
+    <p>Important emergency numbers for tourists.</p>
+
+    <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Police</h3>
+        <p>100</p>
+        <a href="tel:100">
+        <button onclick="makeCall('100','Police')">
+    Call Now
+</button>
+        </a>
+    </div>
+
+    <div class="contact-card">
+        <i class="fas fa-ambulance"></i>
+        <h3>Ambulance</h3>
+        <p>108</p>
+        <a href="tel:108">
+        <button onclick="makeCall('108','Ambulance')">
+    Call Now
+</button>
+        </a>
+    </div>
+
+    <div class="contact-card">
+        <i class="fas fa-fire-extinguisher"></i>
+        <h3>Fire Service</h3>
+        <p>101</p>
+        <a href="tel:101">
+            <button onclick="makeCall('101','Fire Service')">
+    Call Now
+</button>
+        </a>
+    </div>
+
+    <div class="contact-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Tourist Helpline</h3>
+        <p>1363</p>
+        <a href="tel:1363">
+            <button onclick="makeCall('1363','Tourist Helpline')">
+    Call Now
+</button>
+        </a>
+    </div>
+
+</button>
+        </a>
+    </div>
+
+    <div class="contact-card">
+        <i class="fas fa-female"></i>
+        <h3>Women Helpline</h3>
+        <p>181</p>
+        <a href="tel:181">
+            <button onclick="makeCall('181','Women Helpline')">
+    Call Now
+</button>
+        </a>
+    </div>
+
+    <div class="contact-card">
+        <i class="fas fa-child"></i>
+        <h3>Child Helpline</h3>
+        <p>1098</p>
+        <a href="tel:1098">
+            <button onclick="makeCall('1098','Child Helpline')">
+    Call Now
+</button>
+        </a>
+    </div>
+
+</div>
+</button>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Tourist Safety System | Stay Safe • Travel Smart</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/contacts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+<script>
+function makeCall(number, service) {
+
+    let ok = confirm(
+        "Do you want to call " + service + "?\n\nNumber: " + number
+    );
+
+    if (ok) {
+
+        alert("Calling " + service + "...\nNumber: " + number);
+
+        window.location.href = "tel:" + number;
+    }
+
+}
+</script>
+</body>
+</html>

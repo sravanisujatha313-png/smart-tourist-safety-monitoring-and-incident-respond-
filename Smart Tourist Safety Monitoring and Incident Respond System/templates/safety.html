@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/safety.css') }}">
+</head>
+<body>
+
+<header>
+    <h2>🌍 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/location">Location</a>
+        <a href="/report">Report</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1>🛡️ Tourist Safety Tips</h1>
+    <p>Follow these tips to stay safe while traveling.</p>
+
+    <div class="tips">
+
+        <div class="card">
+            <h3>📍 Share Your Location</h3>
+            <p>Share your live location with trusted family or friends.</p>
+        </div>
+
+        <div class="card">
+            <h3>📞 Save Emergency Numbers</h3>
+            <p>Keep local police, ambulance, and emergency contacts saved on your phone.</p>
+        </div>
+
+        <div class="card">
+            <h3>💼 Protect Your Valuables</h3>
+            <p>Keep passports, wallets, and important documents in a secure place.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌙 Avoid Isolated Areas</h3>
+            <p>Travel through well-lit and populated places, especially at night.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚕 Use Trusted Transport</h3>
+            <p>Choose registered taxis or verified ride-sharing services whenever possible.</p>
+        </div>
+
+        <div class="card">
+            <h3>📱 Keep Your Phone Charged</h3>
+            <p>Carry a power bank so you can make emergency calls if needed.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏥 Know Nearby Hospitals</h3>
+            <p>Locate nearby hospitals and medical centers before traveling.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚨 Report Incidents</h3>
+            <p>Use the Report Incident feature immediately if you face any emergency.</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="/dashboard">
+        <button>⬅ Back to Dashboard</button>
+    </a>
+
+</div>
+
+<footer>
+    <p>© 2026 Tourist Safety System | Stay Safe, Travel Smart</p>
+</footer>
+<script src="{{ url_for('static', filename='js/safety.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>

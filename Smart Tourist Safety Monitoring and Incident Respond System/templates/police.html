@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Police Stations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/police.css') }}">
+</head>
+<body>
+
+<header>
+    <h2>👮 Tourist Safety System</h2>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/location">Location</a>
+        <a href="/hospital">Hospitals</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1>👮 Nearby Police Stations</h1>
+    <p>Find the nearest police stations based on your current location.</p>
+
+    <div class="police-box">
+
+        <h3>Your Current Location</h3>
+
+        <p><strong>Latitude:</strong> <span id="lat">Loading...</span></p>
+        <p><strong>Longitude:</strong> <span id="lon">Loading...</span></p>
+
+        <br>
+
+        <button onclick="findPolice()">
+            Find Nearby Police Stations
+        </button>
+
+        <br><br>
+
+        <a id="policeMap" href="#" target="_blank">
+            <button>
+                Open Police Stations in Google Maps
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Tourist Safety System</p>
+</footer>
+
+<script>
+
+function findPolice(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+    }else{
+
+        alert("Geolocation is not supported by your browser.");
+
+    }
+
+}
+
+function showPosition(position){
+
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    document.getElementById("lat").innerHTML = lat;
+    document.getElementById("lon").innerHTML = lon;
+
+    document.getElementById("policeMap").href =
+    "https://www.google.com/maps/search/police+station/@" +
+    lat + "," + lon + ",15z";
+
+}
+
+function showError(error){
+
+    switch(error.code){
+
+        case error.PERMISSION_DENIED:
+            alert("Location permission denied.");
+            break;
+
+        case error.POSITION_UNAVAILABLE:
+            alert("Location unavailable.");
+            break;
+
+        case error.TIMEOUT:
+            alert("Location request timed out.");
+            break;
+
+        default:
+            alert("Unknown error.");
+    }
+
+}
+
+window.onload = findPolice;
+
+</script>
+<script src="{{ url_for('static', filename='js/police.js') }}"></script>
+<script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+</html>
